@@ -3,6 +3,8 @@ import { interval, Observable } from 'rxjs';
 
 import { AeWalletService } from './../../services/wallet/ae-wallet.service';
 
+import { AppState } from './../../entities/app-state.enum';
+
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
@@ -13,8 +15,12 @@ export class MainPageComponent implements OnInit, AfterViewInit {
 
   constructor(
     public aeWalletService: AeWalletService
-  ) { }
+  ) {
+    this.state = AppState.MY_ACCOUNT;
+  }
 
+  public stateEnum = AppState;
+  public state: AppState;
   public myAddress: string;
 
   private balanceUpdateInterval: Observable<number>;
@@ -34,6 +40,15 @@ export class MainPageComponent implements OnInit, AfterViewInit {
     this.balanceUpdateInterval.subscribe( (val) => {
       this.aeWalletService.updateBalance();
     });
+  }
+
+  public setState(state: AppState): void {
+    console.log(state);
+    // this.state = state;
+  }
+
+  public sendBTG(): void {
+    const amount = 1;
   }
 
 }

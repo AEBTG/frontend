@@ -124,8 +124,6 @@ export class AeWalletService {
       this.provider = new Providers.HttpProvider(config);
       await this.provider.setupRpc(waellet, this.onAddressChange.bind(this), this.onNetworkChange.bind(this));
     }
-    // await this.provider.setupRpc(waellet, this.onAddressChange.bind(this), this.onNetworkChange.bind(this));
-    // this.contractAddresss = contractAddress;
   }
 
   private convertCollateralAmount(amount: number): string {

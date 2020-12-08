@@ -24,14 +24,18 @@
     </ng-container>
     
     <ng-container *ngIf="myAddress">
-        <div>
-            <span>Address:&nbsp;</span>
-            <span>{{ myAddress }}</span>
-        </div>
 
-        <div>
-            <span>Balance:&nbsp;</span>
-            <span>{{ aeWalletService.balance | async }}</span>
-        </div>
+        <ng-container [ngSwitch]="state">
+            <ng-container *ngSwitchCase="stateEnum.MY_ACCOUNT">
+                <app-my-account [myAddress]="myAddress" (changeStateCallback)="setState($event)"></app-my-account>
+            </ng-container>
+        </ng-container>
+
+        <!-- <div>
+
+            <button (click)="sendBTG()">
+                <span>Send</span>
+            </button>
+        </div> -->
     </ng-container>
 </div>

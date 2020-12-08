@@ -1,0 +1,6 @@
+export enum AppState {
+    MY_ACCOUNT = 'MY_ACCOUNT',
+    SEND_AEBTG = 'SEND_AEBTG',
+    CONVERT_TO_AEBTG = 'CONVERT_TO_AEBTG',
+    CONVERT_TO_BTG = 'CONVERT_TO_BTG'
+}

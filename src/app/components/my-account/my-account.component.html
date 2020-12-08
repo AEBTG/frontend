@@ -1,0 +1,24 @@
+<div>
+    <span>Address:&nbsp;</span>
+    <span>{{ myAddress }}</span>
+</div>
+
+<div>
+    <span>Balance:&nbsp;</span>
+    <span>{{ aeWalletService.balance | async }}</span>
+</div>
+
+<div>
+    <button (click)="navigateTo(stateEnum.SEND_AEBTG)">
+        <span>Send</span>
+    </button>
+
+    <span>Convert</span>
+    <button (click)="navigateTo(stateEnum.CONVERT_TO_AEBTG)">
+        <span>From BTG</span>
+    </button>
+
+    <button (click)="navigateTo(stateEnum.CONVERT_TO_BTG)">
+        <span>To BTG</span>
+    </button>
+</div>
