@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+
+import { AppState } from './../../entities/app-state.enum';
 
 @Component({
   selector: 'app-convert-to-aebtg',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./convert-to-aebtg.component.css']
 })
 export class ConvertToAebtgComponent implements OnInit {
+
+  @Output() changeStateCallback = new EventEmitter<AppState>();
 
   constructor() { }
 

@@ -26,9 +26,23 @@
     <ng-container *ngIf="myAddress">
 
         <ng-container [ngSwitch]="state">
+
             <ng-container *ngSwitchCase="stateEnum.MY_ACCOUNT">
                 <app-my-account [myAddress]="myAddress" (changeStateCallback)="setState($event)"></app-my-account>
             </ng-container>
+
+            <ng-container *ngSwitchCase="stateEnum.SEND_AEBTG">
+                <app-send-aebtg (changeStateCallback)="setState($event)"></app-send-aebtg>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="stateEnum.CONVERT_TO_AEBTG">
+                <app-convert-to-aebtg (changeStateCallback)="setState($event)"></app-convert-to-aebtg>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="stateEnum.CONVERT_TO_BTG">
+                <app-convert-to-btg (changeStateCallback)="setState($event)"></app-convert-to-btg>
+            </ng-container>
+
         </ng-container>
 
         <!-- <div>
