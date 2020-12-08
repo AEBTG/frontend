@@ -87,6 +87,22 @@ export class AeWalletService {
     }
   }
 
+  public async burn(btgAddress: string, amount: number): Promise<any> {
+    if (this.contract) {
+      this.contract.burn(btgAddress, amount).then(
+
+        (val) => {
+          console.log(val);
+        },
+
+        (err) => {
+          console.log(err);
+        }
+
+      );
+    }
+  }
+
   private async getBalance(): Promise<number> {
     const balance = await this.contract.getInternalBalance();
 

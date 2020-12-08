@@ -32,7 +32,7 @@ export class SendAebtgComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public sendBTG(): void {
+  public sendAEBTG(): void {
     if (this.form.valid) {
       const address = this.form.controls.toAddress.value;
       const amount = this.form.controls.amount.value;

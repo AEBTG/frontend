@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ConvertToAebtgComponent } from './convert-to-aebtg.component';
 
@@ -8,8 +7,6 @@ import { ConvertToAebtgComponent } from './convert-to-aebtg.component';
   declarations: [ConvertToAebtgComponent],
   imports: [
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule
   ],
   exports: [
     ConvertToAebtgComponent
