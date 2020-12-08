@@ -15,14 +15,14 @@ export class RequestsService {
   constructor(
     private httpService: HttpService) { }
 
-  public getSomething(queryParam?: string): Observable<any> {
-    const url = env.apiUrl + env.endpoints.default;
 
-    return this.httpService.get(url);
-  }
+  public getAebtgAddress(address: string): Observable<any> {
+    const url = env.apiUrl + env.endpoints.buyaebtg;
 
-  public postSomething(body: any): Observable<any> {
-    const url = env.apiUrl + env.endpoints.default;
+    const body = {
+      amount: '2500',
+      sendAddress: address
+    }
 
     return this.httpService.post(url, body);
   }

@@ -1,1 +1,16 @@
-<p>send-aebtg works!</p>
+<form [formGroup]="form" (keydown.enter)="$event.preventDefault()" novalidate>
+
+    <span>SEND</span>
+    <input formControlName="toAddress" placeholder="To æBTG address">
+
+    <input formControlName="amount" placeholder="Type the amount">
+
+    <button (click)="sendBTG()">
+        <span>SEND</span>
+    </button>
+
+</form>
+
+<button (click)="navigateTo(stateEnum.MY_ACCOUNT)">
+    <span>BACK</span>
+</button>

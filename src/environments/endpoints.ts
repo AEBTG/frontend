@@ -1,3 +1,3 @@
 export const endpoints = {
-    default: '/default'
+    buyaebtg: '/orders/buyaebtg'
 };

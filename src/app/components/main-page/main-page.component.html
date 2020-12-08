@@ -36,7 +36,7 @@
             </ng-container>
 
             <ng-container *ngSwitchCase="stateEnum.CONVERT_TO_AEBTG">
-                <app-convert-to-aebtg (changeStateCallback)="setState($event)"></app-convert-to-aebtg>
+                <app-convert-to-aebtg [myAddress]="myAddress" (changeStateCallback)="setState($event)"></app-convert-to-aebtg>
             </ng-container>
 
             <ng-container *ngSwitchCase="stateEnum.CONVERT_TO_BTG">

@@ -46,8 +46,4 @@ export class MainPageComponent implements OnInit, AfterViewInit {
     this.state = state;
   }
 
-  public sendBTG(): void {
-    const amount = 1;
-  }
-
 }

@@ -5,7 +5,7 @@ import { endpoints } from './endpoints';
 
 export const env = {
   production: false,
-  apiUrl: '',
+  apiUrl: 'https://aebtg.herokuapp.com/api',
   endpoints
 };
 

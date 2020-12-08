@@ -71,6 +71,22 @@ export class AeWalletService {
     }
   }
 
+  public async sendAEBTG(toAddress: string, amount: number): Promise<any> {
+    if (this.contract) {
+      this.contract.transferTo(toAddress, amount).then(
+
+        (val) => {
+          console.log(val);
+        },
+
+        (err) => {
+          console.log(err);
+        }
+
+      );
+    }
+  }
+
   private async getBalance(): Promise<number> {
     const balance = await this.contract.getInternalBalance();
 
@@ -107,7 +123,7 @@ export class AeWalletService {
     }
   }
 
-  private convertCollateralAmount(amount: number): string {
+  private convertAmount(amount: number): string {
     amount = amount * Math.pow(10, 18);
 
     return amount.toString();

@@ -37,4 +37,9 @@ export default class AssetifyContract {
         const result = await this.provider.callContract('transfer', [receiverAddress, amount]);
         return result;
     }
+
+    async burn(btgAddress: string, amount: number) {
+        const result = await this.provider.callContract('burn', [btgAddress, amount]);
+        return result;
+    }
 }
