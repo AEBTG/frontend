@@ -1,12 +1,37 @@
-<div>{{ myAddress }}</div>
+<div class="aebtg-info-container">
+    <div class="logo"></div>
 
-<div *ngIf="!myAddress">
-    <span>loading...</span>
-    <!-- <button (click)="connectWallet()">
-        <span>Connect to wallet</span>
-    </button> -->
+    <div>
+        æBTG project enables all bitcoin- based 
+        blockchain project to use the advantages 
+        of Aeternity. That is achieved by creating a 
+        coin bridge between your blockchain 
+        and Aeternity.
+    </div>
+    
+    <div>
+        The concept is proved by an using Bitcoin Gold 
+        blockchain because of it’s low fees, good 
+        development support and compatible 
+        with bitcoin libraries.
+    </div>
 </div>
 
-<ng-container *ngIf="myAddress">
 
-</ng-container>
+<div class="aebtg-user-container">
+    <ng-container *ngIf="!myAddress">
+        <span>loading...</span>
+    </ng-container>
+    
+    <ng-container *ngIf="myAddress">
+        <div>
+            <span>Address:&nbsp;</span>
+            <span>{{ myAddress }}</span>
+        </div>
+
+        <div>
+            <span>Balance:&nbsp;</span>
+            <span>{{ aeWalletService.balance | async }}</span>
+        </div>
+    </ng-container>
+</div>

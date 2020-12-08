@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 import Contract from './../../../sign/contract';
 import Providers from './../../../sign/providers';
@@ -22,13 +23,13 @@ interface Wallet {
 })
 export class AeWalletService {
 
+  public balance = new BehaviorSubject<number>(0);
+
   private readonly contractAddress = 'ct_gtjR37cYNFwaseW6gvG3j3iGEzVXaaueFQPk8JRaKqMXF2YYX';
 
   private provider: HttpProvider;
   private contract: Contract;
   private walletAddress: string;
-
-  private balance: Promise<number>;
 
   public async connect(): Promise<boolean> {
 
@@ -44,7 +45,6 @@ export class AeWalletService {
     );
 
     this.walletAddress = await this.provider.client.address();
-    console.log(this.walletAddress);
 
     const contract: Contract = this.getContract();
 
@@ -62,13 +62,25 @@ export class AeWalletService {
     return 'Wallet not connected';
   }
 
-  // public updateBalance(): void {
-  //   this.balance = await contract.getInternalBalance();
-  //   console.log(balance);
-  // }
+  public updateBalance(): void {
+
+    if (this.contract) {
+      this.getBalance().then(
+        (val) => {
+          console.log('Ballance: ' + val);
+          this.balance.next(val);
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+    }
+  }
 
   private async getBalance(): Promise<number> {
-    return await this.contract.getInternalBalance();
+    const balance = await this.contract.getInternalBalance();
+
+    return Promise.resolve(balance.decodedResult);
   }
 
   private getContract(): Contract {
