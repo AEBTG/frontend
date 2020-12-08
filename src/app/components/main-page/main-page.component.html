@@ -1,0 +1,12 @@
+<div>{{ myAddress }}</div>
+
+<div *ngIf="!myAddress">
+    <span>loading...</span>
+    <!-- <button (click)="connectWallet()">
+        <span>Connect to wallet</span>
+    </button> -->
+</div>
+
+<ng-container *ngIf="myAddress">
+
+</ng-container>
