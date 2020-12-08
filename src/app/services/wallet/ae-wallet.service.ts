@@ -25,8 +25,6 @@ export class AeWalletService {
 
   public balance = new BehaviorSubject<number>(0);
 
-  private readonly contractAddress = 'ct_gtjR37cYNFwaseW6gvG3j3iGEzVXaaueFQPk8JRaKqMXF2YYX';
-
   private provider: HttpProvider;
   private contract: Contract;
   private walletAddress: string;
@@ -45,11 +43,7 @@ export class AeWalletService {
     );
 
     this.walletAddress = await this.provider.client.address();
-
-    const contract: Contract = this.getContract();
-
-    const balance = await contract.getInternalBalance();
-    console.log(balance);
+    this.setContract();
 
     return Promise.resolve(connected);
   }
@@ -83,12 +77,10 @@ export class AeWalletService {
     return Promise.resolve(balance.decodedResult);
   }
 
-  private getContract(): Contract {
+  private setContract(): void {
     if (!this.contract) {
       this.contract = new Contract(this.provider);
     }
-
-    return this.contract;
   }
 
   private getWaellet(): Promise<Wallet> {
@@ -110,18 +102,7 @@ export class AeWalletService {
     const waellet: Wallet = await this.getWaellet();
 
     if (!this.provider) {
-
-      const config = {
-        explorer: 'https://testnet.explorer.aepps.com/transactions/',
-        providerUrl: 'https://testnet.aeternity.io/',
-        internalUrl: 'https://testnet.aeternity.io/',
-        compilerUrl: 'https://latest.compiler.aepps.com',
-        nodeName: 'testnet',
-        wsUrl: 'wss://testnet.aeternal.io/websocket',
-        contractAddress: this.contractAddress
-      };
-
-      this.provider = new Providers.HttpProvider(config);
+      this.provider = new Providers.HttpProvider();
       await this.provider.setupRpc(waellet, this.onAddressChange.bind(this), this.onNetworkChange.bind(this));
     }
   }

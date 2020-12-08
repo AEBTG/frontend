@@ -7,5 +7,5 @@ export default {
     compilerUrl: 'https://latest.compiler.aepps.com',
     nodeName: 'testnet',
     wsUrl: 'wss://testnet.aeternal.io/websocket',
-    contractAddress: 'ct_nAaGrh1Ng6AU4ZDtsjCLrUarvTEgwtLfuG8vfRsDpRA5UNEPo',
+    contractAddress: 'ct_gtjR37cYNFwaseW6gvG3j3iGEzVXaaueFQPk8JRaKqMXF2YYX',
 };

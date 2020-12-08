@@ -43,7 +43,6 @@ export class MainPageComponent implements OnInit, AfterViewInit {
   }
 
   public setState(state: AppState): void {
-    console.log(state);
     this.state = state;
   }
 
