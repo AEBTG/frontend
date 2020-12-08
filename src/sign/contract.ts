@@ -27,54 +27,14 @@ export default class AssetifyContract {
         await this.provider.setContract(contractAddress, contractSource);
     }
 
-    async deposit(amount: string, options = DEFAULT_OPTIONS) {
-        const result = await this.provider.callContract('deposit', [], { amount, ...options });
-        return result;
-    }
-
     async getInternalBalance() {
         const address = await this.provider.client.address();
         const result = await this.provider.callContract('balance_of', [address]);
         return result;
     }
 
-    async isChallendged() {
-        const result = await this.provider.callContract('is_challenged', []);
-        return result;
-    }
-
-    async unlockFundsForLender(options = DEFAULT_OPTIONS) {
-        const result = await this.provider.callContract('lender_unlock_funds', [], options);
-        return result;
-    }
-
-    async challengeLender(options = DEFAULT_OPTIONS) {
-        const result = await this.provider.callContract('lender_challenge', [], options);
-        return result;
-    }
-
-    async unlockFundsForBorrower(options = DEFAULT_OPTIONS) {
-        const result = await this.provider.callContract('borrower_unlock_funds', [], options);
-        return result;
-    }
-
-    async challengeBorrower(options = DEFAULT_OPTIONS) {
-        const result = await this.provider.callContract('borrower_challenge', [], options);
-        return result;
-    }
-
-    async withdraw(address: string, options = DEFAULT_OPTIONS) {
-        const result = await this.provider.callContract('withdraw', [address], options);
-        return result;
-    }
-
-    async liquidate(address: string, options = DEFAULT_OPTIONS) {
-        const result = await this.provider.callContract('liquidate', [address], options);
-        return result;
-    }
-
-    async sendToBorrower(options = DEFAULT_OPTIONS) {
-        const result = await this.provider.callContract('send_to_borrower', [], options);
+    async transferTo(receiverAddress: string, amount: number) {
+        const result = await this.provider.callContract('transfer', [receiverAddress, amount]);
         return result;
     }
 }
