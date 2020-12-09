@@ -62,7 +62,7 @@ export class AeWalletService {
       this.getBalance().then(
         (val) => {
           console.log('Ballance: ' + val);
-          this.balance.next(val);
+          this.balance.next(this.convertAmount(val, false));
         },
         (err) => {
           console.log(err);
@@ -73,6 +73,9 @@ export class AeWalletService {
 
   public async sendAEBTG(toAddress: string, amount: number): Promise<any> {
     if (this.contract) {
+      amount = this.convertAmount(amount, true);
+      console.log('Sending amount: ' + amount);
+
       this.contract.transferTo(toAddress, amount).then(
 
         (val) => {
@@ -89,6 +92,9 @@ export class AeWalletService {
 
   public async burn(btgAddress: string, amount: number): Promise<any> {
     if (this.contract) {
+      amount = this.convertAmount(amount, true);
+      console.log('Burning amount: ' + amount);
+
       this.contract.burn(btgAddress, amount).then(
 
         (val) => {
@@ -139,10 +145,14 @@ export class AeWalletService {
     }
   }
 
-  private convertAmount(amount: number): string {
-    amount = amount * Math.pow(10, 18);
+  private convertAmount(amount: number, multiply: boolean): number {
+    if (multiply) {
+      amount = amount * Math.pow(10, 8);
+    } else {
+      amount = amount / Math.pow(10, 8);
+    }
 
-    return amount.toString();
+    return amount;
   }
 
   private onAddressChange(response: any): void {
