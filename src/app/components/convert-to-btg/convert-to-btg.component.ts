@@ -23,11 +23,15 @@ export class ConvertToBtgComponent implements OnInit {
     private aeWalletService: AeWalletService,
     private formBuilder: FormBuilder
   ) {
+
+    this.disabledSend = false;
     this.createForm();
   }
 
   public stateEnum = AppState;
   public form: FormGroup;
+
+  public disabledSend: boolean;
 
   ngOnInit(): void {
   }
@@ -37,7 +41,16 @@ export class ConvertToBtgComponent implements OnInit {
       const address = this.form.controls.btgAddress.value;
       const amount = this.form.controls.amount.value;
 
-      this.aeWalletService.burn(address, amount);
+      this.disabledSend = true;
+      this.aeWalletService.burn(address, amount).then( (val) => {
+        if (val) {
+          this.disabledSend = false;
+
+          if (val === 'success') {
+            alert('Successfully transfered to BTG');
+          }
+        }
+      });
     } else {
       console.log('invalid form, please provide all necessary fields')
     }

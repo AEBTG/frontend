@@ -23,11 +23,14 @@ export class SendAebtgComponent implements OnInit {
     private aeWalletService: AeWalletService,
     private formBuilder: FormBuilder
   ) {
+    this.disabledSend = false;
     this.createForm();
   }
 
   public stateEnum = AppState;
   public form: FormGroup;
+
+  public disabledSend: boolean;
 
   ngOnInit(): void {
   }
@@ -37,7 +40,16 @@ export class SendAebtgComponent implements OnInit {
       const address = this.form.controls.toAddress.value;
       const amount = this.form.controls.amount.value;
 
-      this.aeWalletService.sendAEBTG(address, amount);
+      this.disabledSend = true;
+      this.aeWalletService.sendAEBTG(address, amount).then( (val) => {
+        if (val) {
+          this.disabledSend = false;
+
+          if (val === 'success') {
+            alert('Successfully transfered to BTG');
+          }
+        }
+      });
     } else {
       console.log('invalid form, please provide all necessary fields')
     }

@@ -21,7 +21,7 @@
     </div>
 
     <div class="user-buttons">
-        <button class="black separate" (click)="sendAEBTG()">
+        <button class="black separate" (click)="sendAEBTG()" [disabled]="disabledSend">
             <span>SEND</span>
         </button>
 

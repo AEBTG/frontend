@@ -76,17 +76,21 @@ export class AeWalletService {
       amount = this.convertAmount(amount, true);
       console.log('Sending amount: ' + amount);
 
-      this.contract.transferTo(toAddress, amount).then(
-
+      const success = await this.contract.transferTo(toAddress, amount).then(
         (val) => {
           console.log(val);
+          return 'success';
         },
 
         (err) => {
           console.log(err);
+          return 'error';
         }
-
       );
+
+      return Promise.resolve(success);
+    } else {
+      return Promise.resolve('No contract found');
     }
   }
 
@@ -95,17 +99,21 @@ export class AeWalletService {
       amount = this.convertAmount(amount, true);
       console.log('Burning amount: ' + amount);
 
-      this.contract.burn(btgAddress, amount).then(
-
+      const success = await this.contract.burn(btgAddress, amount).then(
         (val) => {
           console.log(val);
+          return 'success';
         },
 
         (err) => {
           console.log(err);
+          return 'error';
         }
-
       );
+
+      return Promise.resolve(success);
+    } else {
+      return Promise.resolve('No contract found');
     }
   }
 

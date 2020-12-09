@@ -192,6 +192,12 @@ button.black {
     box-shadow: 2px 7px 7px 1px rgb(0, 0, 0, 0.3);
 }
 
+button.black:disabled,
+button.black[disabled] {
+    background-color: #505050;
+    cursor: not-allowed;
+}
+
 button.transparent-white {
     background-color: transparent;
     border: 4px solid #F4F4F4;
