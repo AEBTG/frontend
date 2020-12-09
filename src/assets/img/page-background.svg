@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1042" height="1080" viewBox="0 0 1042 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #707070;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: #f4f4f4;
+      }
+
+      .cls-4 {
+        filter: url(#Path_4);
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_10" data-name="Rectangle 10" class="cls-1" width="1042" height="1080"/>
+    </clipPath>
+    <filter id="Path_4" x="-406.203" y="-168.456" width="1671.679" height="2354.661" filterUnits="userSpaceOnUse">
+      <feOffset dx="30" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="25" result="blur"/>
+      <feFlood flood-color="#120136" flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Mask_Group_2" data-name="Mask Group 2" class="cls-2">
+    <g class="cls-4" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <path id="Path_4-2" data-name="Path 4" class="cls-3" d="M1382.476,1871.2s-137.643-711.66-223.069-920.575S965.81,672.8,1035.934,475.176s275.55-666.527-16.824-778.207S-139.2-183.008-139.2-183.008l30.645,1399.239L37.368,1359.785Z" transform="translate(-222 237)"/>
+    </g>
+  </g>
+</svg>

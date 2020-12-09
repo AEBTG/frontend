@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="169" height="169" viewBox="0 0 169 169">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: #120136;
+      }
+
+      .cls-3 {
+        filter: url(#Path_1);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.232" y1="0.095" x2="0.832" y2="1.002" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#29abe2"/>
+      <stop offset="0.01" stop-color="#40bad5"/>
+      <stop offset="1" stop-color="#035aa6"/>
+    </linearGradient>
+    <filter id="Path_1" x="0" y="0" width="169" height="169" filterUnits="userSpaceOnUse">
+      <feOffset dy="15" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_1" data-name="Group 1" transform="translate(-22.5 -37.5)">
+    <g class="cls-3" transform="matrix(1, 0, 0, 1, 22.5, 37.5)">
+      <path id="Path_1-2" data-name="Path 1" class="cls-1" d="M107,45a62,62,0,1,0,62,62A62,62,0,0,0,107,45Zm0,109.734A47.734,47.734,0,1,1,154.734,107,47.734,47.734,0,0,1,107,154.734Z" transform="translate(-22.5 -37.5)"/>
+    </g>
+    <path id="Path_2" data-name="Path 2" class="cls-2" d="M166.216,123.239a42.977,42.977,0,1,0,42.977,42.977A43.026,43.026,0,0,0,166.216,123.239Zm0,80.269a37.292,37.292,0,1,1,37.292-37.292A37.334,37.334,0,0,1,166.216,203.508Z" transform="translate(-59.216 -59.216)"/>
+    <path id="Path_3" data-name="Path 3" class="cls-2" d="M232.667,219.176a10.425,10.425,0,0,0-7.44-16.886v-5.142h-4.8v5.113h-3.338v-5.113h-4.8v5.113l-11.428-.019,0,.008-.084-.044-7.86,15.166-3.1,5.988L182,238.438h6.471l7.814-15.078h10.887v9.164h-3.357l-2.923,5.843h11.393v4.9h4.8v-4.9h3.338v4.9h4.8v-4.9H227a10.431,10.431,0,0,0,5.667-19.191Zm-19.649-11.07h11.477a4.591,4.591,0,1,1,0,9.181H213.018Zm-13.628,9.265,4.8-9.265h2.98v9.265Zm20.021,5.969H227a4.592,4.592,0,0,1,0,9.183H213.018V223.36" transform="translate(-103.69 -115.155)"/>
+  </g>
+</svg>

@@ -1,55 +1,71 @@
-<div class="aebtg-info-container">
-    <div class="logo"></div>
+<img class="background" src="assets/img/page-background.svg">
 
-    <div>
-        æBTG project enables all bitcoin- based 
-        blockchain project to use the advantages 
-        of Aeternity. That is achieved by creating a 
-        coin bridge between your blockchain 
-        and Aeternity.
-    </div>
+<div class="main-container">
+
+    <div class="aebtg-info-container">
+
+        <div class="logo">
+            <img src="assets/img/logo.svg">
+            <img src="assets/img/logo-label.svg">
+        </div>
+
+        <div class="text">
+            <span class="text1">
+                æBTG project enables all bitcoin- based 
+                blockchain project to use the advantages 
+                of Aeternity. That is achieved by creating a 
+                coin bridge between your blockchain 
+                and Aeternity.
+            </span>
     
-    <div>
-        The concept is proved by an using Bitcoin Gold 
-        blockchain because of it’s low fees, good 
-        development support and compatible 
-        with bitcoin libraries.
+            <span class="text2">
+                The concept is proved by an using Bitcoin Gold 
+                blockchain because of it’s low fees, good 
+                development support and compatible 
+                with bitcoin libraries.
+            </span>
+        </div>
+
+        <div class="footer">
+            <div class="line"></div>
+            <a href="https://github.com/AEBTG">https://github.com/AEBTG</a>
+        </div>
+
     </div>
+
+
+    <div class="aebtg-user-container">
+
+
+            <ng-container *ngIf="!myAddress">
+                <span>loading...</span>
+            </ng-container>
+    
+            <ng-container *ngIf="myAddress">
+    
+                <ng-container [ngSwitch]="state">
+    
+                    <ng-container *ngSwitchCase="stateEnum.MY_ACCOUNT">
+                        <app-my-account [myAddress]="myAddress" (changeStateCallback)="setState($event)"></app-my-account>
+                    </ng-container>
+    
+                    <ng-container *ngSwitchCase="stateEnum.SEND_AEBTG">
+                        <app-send-aebtg (changeStateCallback)="setState($event)"></app-send-aebtg>
+                    </ng-container>
+    
+                    <ng-container *ngSwitchCase="stateEnum.CONVERT_TO_AEBTG">
+                        <app-convert-to-aebtg [myAddress]="myAddress" (changeStateCallback)="setState($event)"></app-convert-to-aebtg>
+                    </ng-container>
+    
+                    <ng-container *ngSwitchCase="stateEnum.CONVERT_TO_BTG">
+                        <app-convert-to-btg (changeStateCallback)="setState($event)"></app-convert-to-btg>
+                    </ng-container>
+    
+                </ng-container>
+    
+            </ng-container>
+
+    </div>
+
 </div>
 
-
-<div class="aebtg-user-container">
-    <ng-container *ngIf="!myAddress">
-        <span>loading...</span>
-    </ng-container>
-    
-    <ng-container *ngIf="myAddress">
-
-        <ng-container [ngSwitch]="state">
-
-            <ng-container *ngSwitchCase="stateEnum.MY_ACCOUNT">
-                <app-my-account [myAddress]="myAddress" (changeStateCallback)="setState($event)"></app-my-account>
-            </ng-container>
-
-            <ng-container *ngSwitchCase="stateEnum.SEND_AEBTG">
-                <app-send-aebtg (changeStateCallback)="setState($event)"></app-send-aebtg>
-            </ng-container>
-
-            <ng-container *ngSwitchCase="stateEnum.CONVERT_TO_AEBTG">
-                <app-convert-to-aebtg [myAddress]="myAddress" (changeStateCallback)="setState($event)"></app-convert-to-aebtg>
-            </ng-container>
-
-            <ng-container *ngSwitchCase="stateEnum.CONVERT_TO_BTG">
-                <app-convert-to-btg (changeStateCallback)="setState($event)"></app-convert-to-btg>
-            </ng-container>
-
-        </ng-container>
-
-        <!-- <div>
-
-            <button (click)="sendBTG()">
-                <span>Send</span>
-            </button>
-        </div> -->
-    </ng-container>
-</div>

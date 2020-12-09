@@ -13,3 +13,38 @@
     font-family: 'OpenSans-Regular';
     src: url('./assets/fonts/OpenSans-Regular.ttf') format('truetype');
 }
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: #120136;
+    background-image: linear-gradient(135deg, #40BAD5, #035AA6);
+    overscroll-behavior: none;
+    font-family: 'Raleway', sans-serif;
+}
+
+.user-actions {
+    height: 80%;
+    width: 60%;
+    box-sizing: border-box;
+    padding: 50px 90px;
+    border-radius: 86px;
+    background-color: rgb(255, 255, 255, 0.2);
+    backdrop-filter: blur(30px) brightness(115%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #F4F4F4;
+    word-break: break-all;
+}
+
+.user-actions > span:nth-of-type(1) {
+    font-size: 48px;
+}
+
+.user-actions > span:nth-of-type(n + 2) {
+    font-size: 24px;
+}

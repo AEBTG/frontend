@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="135" height="78" viewBox="0 0 135 78">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #707070;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        fill: #120136;
+      }
+
+      .cls-3 {
+        font-size: 16px;
+        font-family: Raleway-Medium, Raleway;
+        font-weight: 500;
+        letter-spacing: 0.658em;
+      }
+
+      .cls-4 {
+        font-size: 70px;
+        font-family: BebasNeue-Regular, Bebas Neue;
+      }
+
+      .cls-5 {
+        font-size: 56px;
+        font-family: Raleway-Bold, Raleway;
+        font-weight: 700;
+        letter-spacing: 0.664em;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_3" data-name="Rectangle 3" class="cls-1" width="135" height="78" transform="translate(313 156)"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_1" data-name="Mask Group 1" class="cls-2" transform="translate(-313 -156)">
+    <g id="Group_3" data-name="Group 3" transform="translate(0 11)">
+      <text id="Project" class="cls-3" transform="translate(314.122 222.122)"><tspan x="0" y="0">PROJECT</tspan></text>
+      <g id="Group_2" data-name="Group 2" transform="translate(0 -9)">
+        <text id="BTG" class="cls-4" transform="translate(367.122 204.122)"><tspan x="0" y="0">BTG</tspan></text>
+        <text id="æ" class="cls-5" transform="translate(313.122 203.122)"><tspan x="0" y="0">æ</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
