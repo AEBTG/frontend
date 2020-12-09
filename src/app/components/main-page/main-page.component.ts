@@ -16,12 +16,14 @@ export class MainPageComponent implements OnInit, AfterViewInit {
   constructor(
     public aeWalletService: AeWalletService
   ) {
-    this.state = AppState.MY_ACCOUNT;
+    this.state = AppState.CONVERT_TO_AEBTG;
   }
 
   public stateEnum = AppState;
   public state: AppState;
   public myAddress: string;
+
+  public connected: boolean;
 
   private balanceUpdateInterval: Observable<number>;
 
@@ -30,6 +32,7 @@ export class MainPageComponent implements OnInit, AfterViewInit {
       if (val) {
         this.myAddress = this.aeWalletService.getAddress();
         this.aeWalletService.updateBalance();
+        this.connected = true;
       }
     });
   }

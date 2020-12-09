@@ -38,13 +38,167 @@ html, body {
     justify-content: space-between;
     align-items: center;
     color: #F4F4F4;
+}
+
+.user-actions span.break {
     word-break: break-all;
 }
 
-.user-actions > span:nth-of-type(1) {
-    font-size: 48px;
+/* page info */
+.user-page-info {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.user-actions > span:nth-of-type(n + 2) {
+.user-page-info > span {
+    margin-bottom: 30px;
+}
+
+.user-page-info > span:first-of-type {
+    font-size: 48px;
+    font-family: 'BebasNeue-Regular';
+}
+
+.user-page-info > span:nth-of-type(n + 2) {
     font-size: 24px;
+}
+
+/* input container */
+.input-container {
+    flex: 1 0 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-container > .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.input-container > .header.top-margin {
+    margin-top: 30px;
+}
+
+.input-container > .header > .line {
+    flex: 0 1 50%;
+    height: 2px;
+    background-color: #F4F4F4;
+}
+
+.input-container > .header > span {
+    flex: 1 0 auto;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-family: 'BebasNeue-Regular';
+    font-size: 32px;
+}
+
+.input-container > .input-value {
+    border: none;
+    outline: none;
+    background-color: #F4F4F4;
+    height: 80px;
+    width: 100%;
+    border-radius: 40px;
+}
+
+.input-container > .input-value > span {
+    display: table; /* used to Center horizontally */
+    margin: 0 auto; /* Center horizontally */
+    line-height: 80px; /* Center vertically by setting height as parent */
+    color: #120136;
+    font-size: 40px;
+    font-family: 'OpenSans-Regular';
+    font-weight: bold;
+}
+
+.input-container > input.input-value {
+    box-sizing: border-box;
+    padding: 0px 20px;
+    color: #120136;
+    text-align: center;
+    font-size: 24px
+}
+
+/* description */
+.description {
+    flex: 0.3 0 auto;
+    width: 100%;
+    color: #035AA6;
+    font-size: 16px;
+}
+
+.description.big {
+    font-size: 24px;
+    font-weight: bold;
+    color: #F4F4F4;
+}
+
+/* user actions */
+.user-buttons {
+    flex: 0 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.user-buttons > span {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.user-buttons > button.separate {
+    margin-bottom: 25px;
+}
+
+/* buttons */
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    border-radius: 50px;
+    font-family: 'Raleway';
+    font-weight: bold;
+}
+
+button.black {
+    background-color: #000000;
+    color: #F4F4F4;
+    width: 100%;
+    height: 68px;
+    box-shadow: 2px 7px 7px 1px rgb(0, 0, 0, 0.3);
+}
+
+button.transparent-white {
+    background-color: transparent;
+    border: 4px solid #F4F4F4;
+    color: #F4F4F4;
+    height: 50px;
+    width: 30%;
+}
+
+button.transparent-white.big {
+    width: 45%;
+    height: 60px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

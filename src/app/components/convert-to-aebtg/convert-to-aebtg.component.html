@@ -1,7 +1,29 @@
-<div>
-    <span>{{ aebtgAddress }}</span>
+<div class="user-actions">
+
+    <div class="user-page-info">
+        <span>CONVERT TO <span style="font-family: 'Raleway'; font-weight: bold;">æ</span>BTG</span>
+    </div>
+
+    <div class="description big">
+        <span>
+            Send a transaction to BTG address written below.
+            As soon as your transaction received one 
+            conformation the same amount of BTG tokens 
+            will be deposited to your AEBTG address.
+        </span>
+    </div>
+
+    <div class="input-container">
+    </div>
+
+    <div class="user-buttons">
+        <button (click)="navigateTo(stateEnum.MY_ACCOUNT)">
+            <span>BACK</span>
+        </button>
+    </div>
 </div>
 
-<button (click)="navigateTo(stateEnum.MY_ACCOUNT)">
-    <span>BACK</span>
-</button>
+
+<!-- <div>
+    <span>{{ aebtgAddress }}</span>
+</div> -->

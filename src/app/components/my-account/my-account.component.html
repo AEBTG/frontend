@@ -1,33 +1,36 @@
 <div class="user-actions">
-    <span>æBTG</span>
 
-    <span>Address:&nbsp;</span>
+    <div class="user-page-info">
+        <span><span style="font-family: 'Raleway'; font-weight: bold;">æ</span>BTG</span>
 
-    <span>{{ myAddress }}</span>
+        <span>Address:&nbsp;</span>
+    
+        <span class="break">{{ myAddress }}</span>
+    </div>
 
-    <div class="balance">
+    <div class="input-container">
         <div class="header">
             <div class="line"></div>
             <span>Balance</span>
             <div class="line"></div>
         </div>
 
-        <div class="balance-value">
-            <span>{{ aeWalletService.balance | async }}</span>
+        <div class="input-value">
+            <span>{{ aeWalletService.balance | async }} æBTG</span>
         </div>
     </div>
 
-    <div>
-        <button (click)="navigateTo(stateEnum.SEND_AEBTG)">
-            <span>Send</span>
+    <div class="user-buttons">
+        <button class="black separate" (click)="navigateTo(stateEnum.SEND_AEBTG)">
+            <span>SEND</span>
         </button>
 
         <span>Convert</span>
-        <button (click)="navigateTo(stateEnum.CONVERT_TO_AEBTG)">
+        <button class="transparent-white big" (click)="navigateTo(stateEnum.CONVERT_TO_AEBTG)">
             <span>From BTG</span>
         </button>
 
-        <button (click)="navigateTo(stateEnum.CONVERT_TO_BTG)">
+        <button class="transparent-white big" (click)="navigateTo(stateEnum.CONVERT_TO_BTG)">
             <span>To BTG</span>
         </button>
     </div>

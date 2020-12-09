@@ -1,16 +1,35 @@
-<form [formGroup]="form" (keydown.enter)="$event.preventDefault()" novalidate>
+<form class="user-actions" [formGroup]="form" (keydown.enter)="$event.preventDefault()" novalidate>
 
-    <span>SEND</span>
-    <input formControlName="toAddress" placeholder="To æBTG address">
-
-    <input formControlName="amount" placeholder="Type the amount">
-
-    <button (click)="sendAEBTG()">
+    <div class="user-page-info">
         <span>SEND</span>
-    </button>
+    </div>
+
+    <div class="input-container">
+        <input class="input-value" formControlName="toAddress" placeholder="To æBTG address">
+
+        <div class="header top-margin">
+            <div class="line"></div>
+            <span>Amount</span>
+            <div class="line"></div>
+        </div>
+
+        <input class="input-value" formControlName="amount" placeholder="Type the amount" type="number">
+    </div>
+
+    <div class="description">
+        <span>The amount will be deposited to the recipient æBTG address instantly</span>
+    </div>
+
+    <div class="user-buttons">
+        <button class="black separate" (click)="sendAEBTG()">
+            <span>SEND</span>
+        </button>
+
+        <button class="transparent-white" (click)="navigateTo(stateEnum.MY_ACCOUNT)">
+            <span>BACK</span>
+        </button>
+    </div>
 
 </form>
 
-<button (click)="navigateTo(stateEnum.MY_ACCOUNT)">
-    <span>BACK</span>
-</button>
+
