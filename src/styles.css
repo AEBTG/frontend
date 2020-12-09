@@ -120,15 +120,21 @@ html, body {
 .input-container > input.input-value {
     box-sizing: border-box;
     padding: 0px 20px;
-    color: #120136;
     text-align: center;
     font-size: 24px
+}
+
+.input-container > input.input-value.black {
+    background-color: #120136;
+    color: #F4F4F4;
+    font-size: 28px;
 }
 
 /* description */
 .description {
     flex: 0.3 0 auto;
     width: 100%;
+    text-align: center;
     color: #035AA6;
     font-size: 16px;
 }
@@ -171,7 +177,7 @@ button {
 }
 
 button.black {
-    background-color: #000000;
+    background-color: #120136;
     color: #F4F4F4;
     width: 100%;
     height: 68px;

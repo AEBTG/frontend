@@ -21,7 +21,7 @@ export class ConvertToAebtgComponent implements OnInit {
   }
 
   public stateEnum = AppState;
-  public aebtgAddress: string;
+  public aebtgAddress = '';
 
   ngOnInit(): void {
   }
