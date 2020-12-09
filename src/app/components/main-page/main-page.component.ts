@@ -16,7 +16,7 @@ export class MainPageComponent implements OnInit, AfterViewInit {
   constructor(
     public aeWalletService: AeWalletService
   ) {
-    this.state = AppState.CONVERT_TO_BTG;
+    this.state = AppState.MY_ACCOUNT;
   }
 
   public stateEnum = AppState;
