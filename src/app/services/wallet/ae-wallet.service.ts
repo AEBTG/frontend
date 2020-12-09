@@ -148,6 +148,7 @@ export class AeWalletService {
   private convertAmount(amount: number, multiply: boolean): number {
     if (multiply) {
       amount = amount * Math.pow(10, 8);
+      amount = Math.round(amount);
     } else {
       amount = amount / Math.pow(10, 8);
     }

@@ -6,6 +6,7 @@ import { endpoints } from './endpoints';
 export const env = {
   production: false,
   apiUrl: 'https://aebtg.herokuapp.com/api',
+  // apiUrl: 'https://dc69a97d34ca.ngrok.io/api',
   endpoints
 };
 

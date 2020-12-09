@@ -16,14 +16,13 @@ export class ConvertToAebtgComponent implements OnInit {
 
   constructor(
     private requestService: RequestsService
-  ) {
-    this.getAebtgAddress();
-  }
+  ) { }
 
   public stateEnum = AppState;
   public aebtgAddress = '';
 
   ngOnInit(): void {
+    this.getAebtgAddress();
   }
 
   public navigateTo(state: AppState): void {
