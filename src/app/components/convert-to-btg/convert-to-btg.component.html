@@ -1,16 +1,37 @@
-<form [formGroup]="form" (keydown.enter)="$event.preventDefault()" novalidate>
+<form class="user-actions" [formGroup]="form" (keydown.enter)="$event.preventDefault()" novalidate>
 
-    <span>SEND</span>
-    <input formControlName="btgAddress" placeholder="Your BTG address">
+    <div class="user-page-info">
+        <span>CONVERT TO BTG</span>
+    </div>
 
-    <input formControlName="amount" placeholder="Type the amount">
+    <div class="input-container">
+        <input class="input-value" formControlName="btgAddress" placeholder="Your BTG address">
 
-    <button (click)="convertToBtg()">
-        <span>SEND</span>
-    </button>
+        <div class="header top-margin">
+            <div class="line"></div>
+            <span>Amount</span>
+            <div class="line"></div>
+        </div>
+
+        <input class="input-value" formControlName="amount" placeholder="Type the amount" type="number">
+    </div>
+
+    <div class="description">
+        <span>
+            The amount will be deposited to your BTG address after the 
+            confirmation of the transaction.
+        </span>
+    </div>
+
+    <div class="user-buttons">
+
+        <button class="black separate" (click)="convertToBtg()">
+            <span>SEND</span>
+        </button>
+
+        <button class="transparent-white" (click)="navigateTo(stateEnum.MY_ACCOUNT)">
+            <span>BACK</span>
+        </button>
+    </div>
 
 </form>
-
-<button (click)="navigateTo(stateEnum.MY_ACCOUNT)">
-    <span>BACK</span>
-</button>
